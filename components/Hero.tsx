@@ -39,12 +39,12 @@ export function Hero() {
   }
 
   return (
-    <div className="py-20 text-center">
+    <div className="w-full text-center">
       <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-        Find Your Perfect Muay Thai Gym
+        Explore Top Muay Thai Experiences
       </h1>
-      <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-        Join the waitlist to discover and compare the best Muay Thai gyms worldwide. Be the first to know when we launch!
+      <p className="mt-6 text-lg leading-8 text-white max-w-2xl mx-auto">
+        Join the waitlist to discover and compare the best Muay Thai gyms in Thailand.
       </p>
       {success ? (
         <div className="mt-10 text-green-600 font-semibold text-lg">
@@ -58,7 +58,7 @@ export function Hero() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="flex-1"
+            className="flex-1 border-white/30 text-white placeholder:text-white/50 bg-transparent focus:border-white/30 focus-visible:ring-0 focus:ring-0 transition-colors"
           />
           <Button type="submit" disabled={isLoading}>
             {isLoading ? 'Joining...' : 'Join the waitlist'}

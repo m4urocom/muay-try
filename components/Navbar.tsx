@@ -30,17 +30,17 @@ export function Navbar() {
   }
 
   return (
-    <header>
-      <div className="container flex h-16 items-center justify-between px-4 max-w-7xl mx-auto">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="container relative flex h-16 items-center justify-between px-4 max-w-7xl mx-auto">
         <div className="flex gap-6 items-center">
-          <Link href="/" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold" style={{ color: '#B09864' }}>
             MuayTry
           </Link>
         </div>
-        <nav className="flex gap-4">
+        <nav className="flex gap-4 items-center">
           {user ? (
             <>
-              <Button variant="ghost" onClick={handleSignOut}>
+              <Button variant="ghost" onClick={handleSignOut} className="text-white hover:text-white hover:bg-white/10">
                 Sign Out
               </Button>
               <Button asChild>
@@ -51,12 +51,16 @@ export function Navbar() {
             </>
           ) : (
             <>
-              <Button variant="ghost" asChild>
+              <Button 
+                variant="outline" 
+                asChild 
+                className="border-white text-white hover:text-white hover:bg-white/10 bg-transparent"
+              >
                 <Link href="/login">
                   Log In
                 </Link>
               </Button>
-              <Button asChild>
+              <Button asChild variant="default">
                 <Link href="/login?mode=signup">
                   Get Started
                 </Link>
