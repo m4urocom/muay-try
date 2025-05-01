@@ -50,4 +50,4 @@ next-env.d.ts
 - You **should never commit it** to version control.
 - The lines `+.env.local` and `+.env.*.local` ensure all similar local env files are ignored (like `.env.development.local`).
 
-Want help confirming your env variables are working as expected inside your app?
+Want help confirming your env variables are working as expected inside your app?.env.local
