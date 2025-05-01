@@ -1,6 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { CookieOptions } from '@supabase/ssr'
 
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url)
@@ -16,7 +17,7 @@ export async function GET(request: NextRequest) {
           get(name: string) {
             return request.cookies.get(name)?.value
           },
-          set(name: string, value: string, options: any) {
+          set(name: string, value: string, options: CookieOptions) {
             response.cookies.set({
               name,
               value,
@@ -24,7 +25,7 @@ export async function GET(request: NextRequest) {
               path: '/',
             })
           },
-          remove(name: string, options: any) {
+          remove(name: string, options: CookieOptions) {
             response.cookies.delete({
               name,
               path: '/',

@@ -41,10 +41,11 @@ export default function TrainingPageContent() {
           }
         }
       }
-    } catch (err) {
-      setError('Failed to search trainings')
+    } catch (error) {
+      console.error('Search error:', error);
+      setError('Failed to search trainings');
     } finally {
-      setIsSearching(false)
+      setIsSearching(false);
     }
   }
 

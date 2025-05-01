@@ -97,7 +97,8 @@ export default function GymsPage() {
           }
         }
       }
-    } catch (err) {
+    } catch (error) {
+      console.error('Search error:', error);
       setError('Failed to search gyms');
     } finally {
       setIsSearching(false);

@@ -12,6 +12,23 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
+interface Training {
+  id: string;
+  name: string;
+  description: string;
+  type: 'group-class-session' | 'group-class-period' | 'private-class' | 'package';
+  level: 'all-levels' | 'beginner' | 'intermediate' | 'advanced' | 'fighter' | 'kids';
+  duration: '1-day' | '1-week' | '2-weeks' | '3-weeks' | '1-month' | '2-months' | '3-months' | '6-months' | '1-year';
+  price: number;
+  gym_id: string;
+  created_at: string;
+  updated_at: string;
+  gyms: {
+    name: string;
+    city: string;
+  };
+}
+
 interface SearchFilters {
   type?: string;
   level?: string;
@@ -19,7 +36,7 @@ interface SearchFilters {
 }
 
 interface SearchResult {
-  trainings: any[];
+  trainings: Training[];
   error: string | null;
   filters?: SearchFilters;
 }

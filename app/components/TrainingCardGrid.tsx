@@ -42,7 +42,7 @@ export default function TrainingCardGrid({ type, level, duration }: TrainingCard
     })
 
     return () => subscription.unsubscribe()
-  }, [])
+  }, [supabase.auth])
 
   useEffect(() => {
     async function fetchTrainings() {
@@ -115,7 +115,7 @@ export default function TrainingCardGrid({ type, level, duration }: TrainingCard
     }
 
     fetchTrainings()
-  }, [type, level, duration])
+  }, [type, level, duration, supabase])
 
   if (isLoading) {
     return <div className="col-span-3 text-center">Loading...</div>

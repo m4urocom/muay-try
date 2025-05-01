@@ -12,10 +12,10 @@ export const createClient = () => {
           const cookie = cookieStore.get(name)
           return cookie?.value
         },
-        set(name: string, value: string, options: CookieOptions) {
+        set(_name: string, _value: string, _options: CookieOptions) {
           // The cookie setting will be handled by the middleware
         },
-        remove(name: string, options: CookieOptions) {
+        remove(_name: string, _options: CookieOptions) {
           // The cookie removal will be handled by the middleware
         },
       },

@@ -12,13 +12,36 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
+interface Gym {
+  id: string;
+  name: string;
+  description: string;
+  city: string;
+  address: string;
+  amenities: {
+    pool?: boolean;
+    shop?: boolean;
+    shower?: boolean;
+    free_wifi?: boolean;
+    restrooms?: boolean;
+    restaurant?: boolean;
+    weight_room?: boolean;
+    group_classes?: boolean;
+    massage_and_spa?: boolean;
+    personal_trainer?: boolean;
+    onsite_accommodation?: boolean;
+  };
+  created_at: string;
+  updated_at: string;
+}
+
 interface SearchFilters {
   city?: string;
   amenities?: string[];
 }
 
 interface SearchResult {
-  gyms: any[];
+  gyms: Gym[];
   error: string | null;
   filters?: SearchFilters;
 }
