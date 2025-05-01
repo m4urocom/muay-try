@@ -25,9 +25,13 @@ export const createClient = () => {
             // Handle cookie setting error
           }
         },
-        remove(name: string) {
+        remove(name: string, options: CookieOptions) {
           try {
-            cookieStore.delete(name)
+            cookieStore.set({
+              name,
+              value: '',
+              ...options,
+            })
           } catch {
             // Handle cookie removal error
           }
