@@ -31,6 +31,7 @@ export function Hero() {
       setEmail('')
       setSuccess(true)
     } catch (error) {
+      console.error('Failed to join waitlist:', error)
       toast.error('Failed to join the waitlist. Please try again.')
     } finally {
       setIsLoading(false)
@@ -47,7 +48,7 @@ export function Hero() {
       </p>
       {success ? (
         <div className="mt-10 text-green-600 font-semibold text-lg">
-          Thank you for joining the waitlist! 🎉<br />We'll notify you as soon as we launch.
+          Thank you for joining the waitlist! 🎉<br />We&apos;ll notify you as soon as we launch.
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="mt-10 flex gap-x-4 justify-center max-w-md mx-auto">

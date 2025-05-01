@@ -15,22 +15,11 @@ const supabase = createClient(
 interface Gym {
   id: string;
   name: string;
-  description: string;
+  description: string | null;
   city: string;
   address: string;
-  amenities: {
-    pool?: boolean;
-    shop?: boolean;
-    shower?: boolean;
-    free_wifi?: boolean;
-    restrooms?: boolean;
-    restaurant?: boolean;
-    weight_room?: boolean;
-    group_classes?: boolean;
-    massage_and_spa?: boolean;
-    personal_trainer?: boolean;
-    onsite_accommodation?: boolean;
-  };
+  image_url: string;
+  amenities: Record<string, boolean>;
   created_at: string;
   updated_at: string;
 }

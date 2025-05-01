@@ -33,6 +33,7 @@ export default function UnsubscribePage() {
         setStatus('success')
         setMessage('You have been successfully unsubscribed from our mailing list.')
       } catch (error) {
+        console.error('Failed to unsubscribe:', error);
         setStatus('error')
         setMessage('Failed to unsubscribe. Please try again later.')
       }
@@ -54,7 +55,7 @@ export default function UnsubscribePage() {
           <div className="text-green-600">
             <p>{message}</p>
             <p className="mt-4 text-sm text-gray-500">
-              We're sorry to see you go. If you change your mind, you can always join our waitlist again.
+              We&apos;re sorry to see you go. If you change your mind, you can always join our waitlist again.
             </p>
           </div>
         )}
