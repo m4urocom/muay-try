@@ -1,4 +1,4 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 export const createClient = () => {
@@ -9,12 +9,13 @@ export const createClient = () => {
       cookies: {
         get(name: string) {
           const cookieStore = cookies()
-          return cookieStore.get(name)?.value ?? ''
+          const cookie = cookieStore.get(name)
+          return cookie?.value ?? ''
         },
-        set(name: string, value: string, options: CookieOptions) {
+        set() {
           // Cookie setting is handled by middleware
         },
-        remove(name: string, options: CookieOptions) {
+        remove() {
           // Cookie removal is handled by middleware
         },
       },
