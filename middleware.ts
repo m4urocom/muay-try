@@ -34,7 +34,7 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  await supabase.auth.getSession()
+  const { data: { session } } = await supabase.auth.getSession()
 
   // If trying to access a protected route and not logged in, redirect to login
   if (!session && request.nextUrl.pathname.startsWith('/dashboard')) {
