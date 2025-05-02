@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center w-full">
-      <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r w-1/2 max-w-xl">
+    <div className="flex flex-col min-h-[calc(100vh-4rem)] items-center justify-center w-full lg:flex-row">
+      <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r w-full max-w-xl lg:w-1/2">
         <div className="absolute inset-0 bg-sky-950" />
         <div className="relative z-20 flex items-center text-lg font-medium">
           <Link href="/" className="flex items-center">
