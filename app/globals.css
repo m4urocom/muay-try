@@ -114,7 +114,10 @@
     @apply bg-sky-950;
   }
   h1 {
-    color: #B09864;
+    background: linear-gradient(to right, #B09864, #CCBA92);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   p {
     color: #ffffff;
