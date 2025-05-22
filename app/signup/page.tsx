@@ -1,51 +1,21 @@
-import { Metadata } from "next"
-import Link from "next/link"
+import { SignupForm } from '@/components/signup-form'
 
-import { SignUpForm } from "@/components/signup-form"
-
-export const metadata: Metadata = {
-  title: "Sign Up | MuayTry",
-  description: "Create your MuayTry account",
-}
-
-export default function SignUpPage() {
+export default function SignupPage() {
   return (
-    <div className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center lg:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-      <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-        <div className="absolute inset-0 bg-sky-950" />
-        <div className="relative z-20 flex items-center text-lg font-medium">
-          <Link href="/" className="flex items-center">
-            MuayTry
-          </Link>
-        </div>
-        <div className="relative z-20 mt-auto">
-          <blockquote className="space-y-2">
-            <p className="text-lg">
-              &ldquo;Join our community of Muay Thai enthusiasts and discover the best training experiences in Thailand.&rdquo;
-            </p>
-          </blockquote>
+    <div className="grid min-h-svh lg:grid-cols-2">
+      <div className="flex flex-col gap-4 p-6 md:p-10 relative">
+        <div className="flex flex-1 flex-col items-center justify-center">
+          <div className="w-full max-w-xs">
+            <SignupForm />
+          </div>
         </div>
       </div>
-      <div className="w-full px-4 lg:p-8">
-        <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-          <div className="flex flex-col space-y-2 text-center">
-            <h1 className="text-2xl font-semibold tracking-tight">
-              Create an account
-            </h1>
-            <p className="text-sm text-muted-foreground">
-              Enter your email below to create your account
-            </p>
-          </div>
-          <SignUpForm />
-          <p className="px-8 text-center text-sm text-muted-foreground">
-            <Link
-              href="/login"
-              className="hover:text-brand underline underline-offset-4"
-            >
-              Already have an account? Sign In
-            </Link>
-          </p>
-        </div>
+      <div className="bg-muted relative hidden lg:block">
+        <img
+          src="https://npwekmkmdvrwcnuyueam.supabase.co/storage/v1/object/sign/backgrounds/login.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NmZjNiYjBkLTNhMmQtNDBjOS04ZWI2LWI5ZTk1NzcxYTJjNiJ9.eyJ1cmwiOiJiYWNrZ3JvdW5kcy9sb2dpbi5wbmciLCJpYXQiOjE3NDYxOTk5MjEsImV4cCI6MTc3NzczNTkyMX0._SttRnc-WJS8PtGCJ_zCGQmQkZZ-ZuaCNi0Y1obpKdY"
+          alt="Sign Up"
+          className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+        />
       </div>
     </div>
   )

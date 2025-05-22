@@ -55,7 +55,7 @@ export default function AISearchInput({ onSearch, isLoading = false, type = 'gym
               onKeyDown={handleKeyDown}
               placeholder={getPlaceholder()}
               className={cn(
-                "w-full px-4 py-3 pl-11 text-base rounded-md",
+                "w-full max-w-[95vw] sm:max-w-full px-4 py-3 pl-11 text-base rounded-md",
                 "border border-input bg-background",
                 "focus-visible:outline-none focus-visible:ring-1",
                 "focus-visible:ring-ring focus-visible:border-input",

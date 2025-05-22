@@ -61,7 +61,7 @@ export function Navbar() {
                 </Link>
               </Button>
               <Button asChild variant="default">
-                <Link href="/login?mode=signup">
+                <Link href="/signup">
                   Get Started
                 </Link>
               </Button>
